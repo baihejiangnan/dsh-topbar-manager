@@ -21,6 +21,7 @@ DeepSeek Harness (DSH) Web 插件：检查并管理顶部工具栏中由其他�
 | 对话管理 | `dsh-session-manager` | 隐藏 |
 | 删除本对话 | `dsh-session-manager` | 隐藏 |
 | 撤销/恢复/快照 | `dsh-undo-savepoint` | 显示 |
+| 会话改动 | `dsh-what-changed` | 显示 |
 
 > 目前只明确测试了以上按钮。其他插件添加到顶部工具栏的按钮**尚未测试**。
 > 如果安装新插件后在顶部栏新增了按钮，可以到 **设置 → 顶部按钮管理** 点击 **检查** 刷新出来。
