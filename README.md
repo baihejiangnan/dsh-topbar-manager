@@ -2,6 +2,8 @@
 
 DeepSeek Harness (DSH) Web 插件：检查并管理顶部工具栏中由其他插件添加的按钮显示/隐藏。
 
+当前版本为 `0.3.0`。按钮显示设置保存在 DSH profile 中，刷新页面或重新打开 DSH 后仍会保留。
+
 默认隐藏：
 
 - `Diff`
@@ -23,20 +25,25 @@ DeepSeek Harness (DSH) Web 插件：检查并管理顶部工具栏中由其他�
 | 撤销/恢复/快照 | `dsh-undo-savepoint` | 显示 |
 | 会话改动 | `dsh-what-changed` | 显示 |
 
-> 目前只明确测试了以上按钮。其他插件添加到顶部工具栏的按钮**尚未测试**。
-> 如果安装新插件后在顶部栏新增了按钮，可以到 **设置 → 顶部按钮管理** 点击 **检查** 刷新出来。
-> 未识别的按钮会标记为“未知插件（未测试）”，你也可以用开关手动控制显示状态。
+> 点击 **检查** 时，同一个插件按钮只记录一次，并根据按钮或其插件容器识别来源。
+> 原生 DSH 按钮（包括 `Session log`）和无法确认来源的按钮会被忽略，不会被记录或操作。
 
 ## 安装
 
-将本仓库放入 DSH profile 的 vendor 目录后，在 `profiles/web/package.json` 中添加：
+在 DSH 的 `profiles/web/package.json` 中添加 GitHub 依赖：
 
 ```json
 {
   "dependencies": {
-    "dsh-topbar-manager": "file:./vendor/dsh-topbar-manager"
+    "dsh-topbar-manager": "github:baihejiangnan/dsh-topbar-manager"
   }
 }
+```
+
+然后在 `profiles/web` 目录运行：
+
+```bash
+pnpm install
 ```
 
 并确保 `dsh.profile.bundles` 中包含：
@@ -45,10 +52,10 @@ DeepSeek Harness (DSH) Web 插件：检查并管理顶部工具栏中由其他�
 "dsh-topbar-manager"
 ```
 
-或者使用：
+也可以直接使用：
 
 ```bash
-dsh plugin --profile web add file:./vendor/dsh-topbar-manager
+dsh plugin --profile web add github:baihejiangnan/dsh-topbar-manager
 ```
 
 然后重启 `dsh web`。
