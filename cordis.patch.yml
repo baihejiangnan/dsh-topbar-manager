@@ -1,0 +1,4 @@
+# dsh-topbar-manager bundle patch
+- insert:
+    - id: topbar-manager
+      name: 'dsh-topbar-manager'

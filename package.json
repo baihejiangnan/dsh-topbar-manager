@@ -1,0 +1,21 @@
+{
+  "name": "dsh-topbar-manager",
+  "version": "0.1.0",
+  "description": "Hide/toggle plugin-added top toolbar buttons in DSH web UI.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
