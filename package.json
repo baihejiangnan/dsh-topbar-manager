@@ -1,6 +1,6 @@
 {
   "name": "dsh-topbar-manager",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "DeepSeek Harness Web 顶部按钮管理器：检查并开关插件添加的顶部工具栏按钮。",
   "license": "MIT",
   "type": "module",
@@ -21,6 +21,6 @@
   "peerDependencies": {
     "@deepseek-ai/dsh-host-webserver": "^0.1.0-rc.6",
     "@deepseek-ai/dsh-settings": "^0.1.0-rc.6",
-    "schemastery": "^3.18.1"
+    "@deepseek-ai/schemastery": "^3.18.1"
   }
 }
